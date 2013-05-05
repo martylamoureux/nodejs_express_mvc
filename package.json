@@ -1,0 +1,16 @@
+{
+  "name": "express-test",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "express": "latest",
+    "jade": "latest",
+    "mongoose": "latest",
+    "stylus": "latest",
+    "nib": "latest",
+    "express-messages": "latest"
+  }
+}

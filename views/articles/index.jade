@@ -1,0 +1,20 @@
+extend ../layout
+block content
+  h1 Articles
+  table.table.table-bordered
+    thead
+      tr
+        th Titre
+        th Date
+    tbody
+      each article in articles
+        tr
+          td= article.title
+          td= article.date
+    
+block sidebar
+  .widget
+    p
+      a.btn.btn-danger.btn-block(href='/articles/add/')
+        span.glyphicon.glyphicon-plus
+        span.quicksand  Ajouter un Article
