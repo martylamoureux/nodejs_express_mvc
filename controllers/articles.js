@@ -16,10 +16,23 @@ exports.list = function(req, res){
 	
 };
 
-/*
-exports.index = function(req, res){
-	res.render('index.jade', {
-		title: 'Express'
+exports.add = function(req, res) {
+	
+	var object = new Article();
+	
+	res.render(viewsRoot + 'form.jade', {
+		title: 'Nouvel Article',
+		article: object
 	});
+
 };
-*/
+
+exports.create = function(req, res) {
+	
+	var object = new Article(req.body);
+	
+	object.save(function(err) {
+		res.redirect('/articles/');
+	});
+
+};

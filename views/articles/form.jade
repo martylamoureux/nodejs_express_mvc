@@ -1,0 +1,26 @@
+extend ../layout
+
+block content
+  .panel
+    .panel-heading= title	
+    form.form-horizontal(method='post')
+      .control-group
+        label.control-label(for='title') Titre
+        .controls
+          input#title.input-xlarge(type='text', name="title", value=article.title, placeholder="Titre de l'aricle")
+  
+      .control-group
+        label.control-label(for='content') Contenu
+        .controls
+          textarea#content.input-xlarge(type='text', rows="5", name="body", placeholder="Entrez le contenu de l'article")=article.content
+        
+      .form-actions
+        button.btn.btn-primary(type='submit') Créer l'article
+  
+    
+block sidebar
+  .widget
+    p
+      a.btn.btn-block(href='/articles/')
+        span.glyphicon.glyphicon-chevron-left
+        span.quicksand  Retour
